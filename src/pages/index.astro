@@ -1,4 +1,5 @@
 ---
+import Header from '../components/Header.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WorkRow from '../components/WorkRow.astro';
 import { getWall } from '../lib/works';
@@ -11,6 +12,7 @@ const works = await getWall();
   description="Ryodgie Barnatia — web designer and front-end developer (Vue, React, Astro). Portfolio of live coded websites, editorial, motion, and design experiments."
 >
   <main class="wall">
+     <Header />
     {works.map((work, i) => <WorkRow work={work} index={i} />)}
   </main>
 </BaseLayout>
