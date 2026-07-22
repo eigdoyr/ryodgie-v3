@@ -1,0 +1,25 @@
+{
+  "title": "ECL–F25",
+  "medium": "editorial",
+  "series": "fashion spread",
+  "fonts": ["Maitree", "JetBrains Mono"],
+  "year": 2025,
+  "createdAt": "2025-10-21",
+  "images": [
+    {
+      "src": "../../assets/works/eclipse-f25/01.jpg",
+      "alt": "",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/eclipse-f25/02.jpg",
+      "alt": "",
+      "weight": 0.6
+    }
+  ],
+  "concept": false,
+  "visible": true,
+  "order": 0,
+  "tags": [],
+  "colors": []
+}
