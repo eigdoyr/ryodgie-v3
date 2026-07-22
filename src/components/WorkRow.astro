@@ -1,0 +1,33 @@
+---
+import { Picture } from 'astro:assets';
+import Caption from './Caption.astro';
+import type { Work } from '../lib/works';
+
+interface Props { work: Work; index: number }
+const { work, index } = Astro.props;
+const { images } = work.data;
+
+const grows = images.map((img) => (img.src.width / img.src.height) * img.weight);
+const total = grows.reduce((a, b) => a + b, 0);
+---
+<article class="work">
+  <div class="row">
+    {images.map((img, i) => {
+      const fraction = grows[i] / total;
+      const sizes = `(max-width: 640px) 100vw, (max-width: 1548px) ${(fraction * 100).toFixed(1)}vw, ${Math.round(fraction * 1500)}px`;
+      return (
+        <figure style={`--ar: ${img.src.width}/${img.src.height}; flex: ${grows[i]} 1 0;`}>
+          <Picture
+            src={img.src}
+            alt={img.alt}
+            formats={['avif', 'webp']}
+            widths={[640, 960, 1280]}
+            sizes={sizes}
+            loading={index === 0 ? 'eager' : 'lazy'}
+          />
+        </figure>
+      );
+    })}
+  </div>
+  <Caption work={work} />
+</article>
