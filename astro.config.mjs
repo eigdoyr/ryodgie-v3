@@ -1,9 +1,15 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
-import sitemap from '@astrojs/sitemap';
-
-// https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+  fonts: [
+    {
+      name: "DM Sans",
+      cssVariable: "--font-dm-sans",
+      provider: fontProviders.google(),
+      weights: [400],
+      styles: ["normal"],
+    },
+  ],
 });
