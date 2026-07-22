@@ -1,22 +1,16 @@
 ---
-import { getWall } from '../lib/works';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import WorkRow from '../components/WorkRow.astro';
-import '../styles/global.css';
-import { Font } from 'astro:assets';
+import { getWall } from '../lib/works';
 
 const works = await getWall();
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<Font cssVariable="--font-dm-sans" preload />
-    <title>Ryodgie Barnatia</title>
-  </head>
-  <body>
-    <main class="wall">
-      {works.map((work, i) => <WorkRow work={work} index={i} />)}
-    </main>
-  </body>
-</html>
+
+<BaseLayout
+  title="Ryodgie Barnatia — Creative Designer & Developer"
+  description="Ryodgie Barnatia — web designer and front-end developer (Vue, React, Astro). Portfolio of live coded websites, editorial, motion, and design experiments."
+>
+  <main class="wall">
+    {works.map((work, i) => <WorkRow work={work} index={i} />)}
+  </main>
+</BaseLayout>
