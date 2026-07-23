@@ -1,9 +1,9 @@
 ---
 import type { Work } from '../lib/works';
 
-interface Props { work: Work }
-const { work } = Astro.props;
-const { title, series, medium, concept, year, fonts } = work.data;
+interface Props { work: Work; showLive?: boolean }
+const { work, showLive = false } = Astro.props;
+const { title, series, medium, concept, year, fonts, liveUrl } = work.data;
 
 const descriptor = concept ? `${medium} concept` : medium;
 const head = series ? `${title} // ${series}` : title;
@@ -11,4 +11,7 @@ const head = series ? `${title} // ${series}` : title;
 <div class="caption">
   <div>{head} — {descriptor}, {year}</div>
   <div>Fonts: {fonts.join(' & ')}</div>
+  {showLive && liveUrl && (
+    <a class="live" href={liveUrl} rel="noopener" target="_blank">view live site →</a>
+  )}
 </div>

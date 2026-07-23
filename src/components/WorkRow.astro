@@ -11,6 +11,7 @@ const weights = images.map((img) => img.weight);
 const total = weights.reduce((a, b) => a + b, 0);
 ---
 <article class="work">
+    <a class="row-link" href={`/work/${work.id}`}>
   <div class="row">
     {images.map((img, i) => {
       const fraction = weights[i] / total;
@@ -29,5 +30,7 @@ const total = weights.reduce((a, b) => a + b, 0);
       );
     })}
   </div>
+  </a>
   <Caption work={work} />
 </article>
+

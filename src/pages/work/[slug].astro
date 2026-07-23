@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import { Picture } from 'astro:assets';
+import { getImage } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Caption from '../../components/Caption.astro';
+
+export async function getStaticPaths() {
+  const works = await getCollection('works', ({ data }) => data.visible);
+  return works.map((work) => ({
+    params: { slug: work.id },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props;
+const { title, medium, concept, year, images } = work.data;
+const ogImg = await getImage({ src: images[0].src, format: 'jpg', width: 1200, height: 630, fit: 'cover' });
+
+const descriptor = concept ? `${medium} concept` : medium;
+const pageTitle = `${title} — ${descriptor}, ${year} · Ryodgie Barnatia`;
+const description = images[0].alt || `${title}, ${descriptor} by Ryodgie Barnatia.`;
+---
+
+<BaseLayout title={pageTitle} description={description} ogType="article" ogImage={ogImg.src}>
+  <main class="project">
+    <a class="back" href="/">← back to the wall</a>
+
+    <div class="project-frames">
+      {images.map((img, i) => (
+        <figure style={`aspect-ratio: ${img.src.width}/${img.src.height};`}>
+          <Picture
+            src={img.src}
+            alt={img.alt}
+            formats={['avif', 'webp']}
+            widths={[640, 960, 1280, 1600]}
+            sizes="(max-width: 639px) 100vw, (max-width: 1024px) 90vw, 1000px"
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        </figure>
+      ))}
+    </div>
+
+    <Caption work={work} showLive />
+  </main>
+</BaseLayout>
