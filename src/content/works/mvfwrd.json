@@ -19,7 +19,7 @@
   ],
   "concept": true,
   "visible": true,
-  "order": 5,
+  "order": 50,
   "tags": ["type", "typography", "magazine", "layout", "monochrome"],
   "colors": ["#141414", "#F0898C", "#8A8A8A"]
 }
