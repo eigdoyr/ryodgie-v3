@@ -8,18 +8,18 @@
   "images": [
     {
       "src": "../../assets/works/eclipse-f25/01.jpg",
-      "alt": "",
+      "alt": "Dark editorial hero with oversized lavender ECL–F25 lettering on black, inset portraits of a man in an olive overcoat and a grey blazer, plus collection stats.",
       "weight": 1
     },
     {
       "src": "../../assets/works/eclipse-f25/02.jpg",
-      "alt": "",
+      "alt": "Left panel of lavender body copy and a brushstroke eclipse wordmark on black; right, a man shot full-length in a rust suede jacket, olive scarf, and dark trousers.",
       "weight": 0.6
     }
   ],
-  "concept": false,
+  "concept": true,
   "visible": true,
-  "order": 2,
-  "tags": [],
-  "colors": []
+  "order": 4,
+  "tags": ["fashion", "editorial", "menswear", "typography", "layout"],
+  "colors": ["#0B0B0D", "#B6B9F2", "#4A5560"]
 }

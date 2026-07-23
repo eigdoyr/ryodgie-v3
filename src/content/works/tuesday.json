@@ -1,0 +1,32 @@
+{
+  "title": "tuesday",
+  "medium": "web",
+  "series": "web layout",
+  "fonts": ["Moderustic", "Manufacturing Consent"],
+  "year": 2026,
+  "createdAt": "2026-07-19",
+  "images": [
+    {
+      "src": "../../assets/works/tuesday/01.jpg",
+      "alt": "Cream landing page with a large navy blackletter-serif TUESDAY wordmark tagged Old Money Lifestyle, a nav bar, and a photo strip of an ornate carved-arch interior below.",
+      "weight": 0.5
+    },
+    {
+      "src": "../../assets/works/tuesday/02.jpg",
+      "alt": "Two-column editorial layout: a framed photo of a sunlit classical villa interior with wry navy copy, beside a woman in a white blazer and straw hat seated at a café table.",
+      "weight": 0.5
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 7,
+  "tags": [
+    "web",
+    "editorial",
+    "luxury",
+    "typography",
+    "lifestyle",
+    "old money"
+  ],
+  "colors": ["#ECE8D4", "#232752", "#B39B7C"]
+}

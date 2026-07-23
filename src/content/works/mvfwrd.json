@@ -1,0 +1,25 @@
+{
+  "title": "MVFWRD VOL-01",
+  "medium": "type",
+  "series": "type specimen",
+  "fonts": ["Schibsted Grotesk", "Barlow"],
+  "year": 2026,
+  "createdAt": "2026-01-01",
+  "images": [
+    {
+      "src": "../../assets/works/mvfwrd/01.jpg",
+      "alt": "Monochrome close-up of a curly-haired person with glitter under the eyes and a nose ring, above bold coral SCHIBSTED GROTESK lettering on black with small credit labels.",
+      "weight": 0.6
+    },
+    {
+      "src": "../../assets/works/mvfwrd/02.jpg",
+      "alt": "Salmon-pink and black typographic layout of overlapping tilted posters with fragmented MNCHRM and MVFWRD lettering and labels like brutal, uncompromising contrast, grayscale archive.",
+      "weight": 0.4
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 5,
+  "tags": ["type", "typography", "magazine", "layout", "monochrome"],
+  "colors": ["#141414", "#F0898C", "#8A8A8A"]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "BLANC INV. '26",
+  "medium": "web",
+  "series": "web layout",
+  "fonts": ["Epilogue", "League Script"],
+  "year": 2026,
+  "createdAt": "2026-07-10",
+  "images": [
+    {
+      "src": "../../assets/works/blanc-tennis/01.jpg",
+      "alt": "Split web hero: seated player holds a green-and-black Wilson racket on court beside a ball can, next to a mint panel with dark green BOSTON wordmark and lime script.",
+      "weight": 0.8
+    },
+    {
+      "src": "../../assets/works/blanc-tennis/02.jpg",
+      "alt": "Mint schedule panel listing tournament rounds and dates beside a photo of an olive Showtime-print sweatshirt, a vintage Slazenger wooden racket, and a tennis ball on wood slats.",
+      "weight": 0.5
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 2,
+  "tags": ["tennis", "sport", "layout", "typography", "branding"],
+  "colors": ["#D2F3CF", "#C3F03D", "#3C4325"]
+}

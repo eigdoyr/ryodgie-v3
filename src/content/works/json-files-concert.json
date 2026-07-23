@@ -1,0 +1,25 @@
+{
+  "title": "JSoN FILES",
+  "medium": "poster",
+  "series": "gig poster",
+  "fonts": ["DIN Condensed", "Mr Dafoe"],
+  "year": 2026,
+  "createdAt": "2026-01-01",
+  "images": [
+    {
+      "src": "../../assets/works/json-files-concert/01.jpg",
+      "alt": "Red-lit concert poster of a silhouetted crowd with raised hands; bold red JSoN FILES lettering with yellow mystical magical script overlaid, dated 08.24.26 at Madison Garden, NY.",
+      "weight": 0.8
+    },
+    {
+      "src": "../../assets/works/json-files-concert/02.jpg",
+      "alt": "Red-toned tour poster of a tattooed singer at a mic in smoke; cream and yellow city names list Los Angeles, San Francisco, Pasadena, New York, Brooklyn beside Madison Square Garden.",
+      "weight": 0.7
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 3,
+  "tags": ["poster", "concert", "music", "typography", "tour"],
+  "colors": ["#1A0505", "#E8231A", "#F0B94A"]
+}

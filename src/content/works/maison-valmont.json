@@ -1,0 +1,25 @@
+{
+  "title": "Maison Valmont",
+  "medium": "web",
+  "series": "editorial website",
+  "fonts": ["Bebas Neue", "Castoro"],
+  "year": 2025,
+  "createdAt": "2025-10-21",
+  "images": [
+    {
+      "src": "../../assets/works/maison-valmont/02.jpg",
+      "alt": "Product page with an italic Le Grand Vin heading, a giant pale-pink 2019, and Cabernet Sauvignon tasting notes beside a dark bottle with a crested cream label.",
+      "weight": 1.5
+    },
+    {
+      "src": "../../assets/works/maison-valmont/01.jpg",
+      "alt": "Dark wine-cellar hero with racked vintage bottles; oversized red MAISON VALMONT wordmark overlaid with a cream Napa Valley script and EST. 1974.",
+      "weight": 2
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 8,
+  "tags": ["wine", "web", "luxury", "typography", "branding"],
+  "colors": ["#1B1410", "#B01D1D", "#E5D6A9", "#F1D8D8"]
+}
