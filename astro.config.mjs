@@ -2,7 +2,7 @@ import { defineConfig, fontProviders } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://ryodgie.com",
+  site: "https://www.ryodgie.com",
   integrations: [sitemap()],
   fonts: [
     {
