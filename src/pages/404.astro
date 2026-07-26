@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Lost — Ryodgie Barnatia"
+  description="This page doesn't exist. Back to the wall."
+>
+  <main class="notfound">
+    <p class="nf-code">404</p>
+    <p class="nf-line">You found a layout I never built.</p>
+    <a class="nf-back" href="/">← back to the wall</a>
+  </main>
+</BaseLayout>
+
+<style>
+  .notfound {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: var(--pad-x);
+    text-align: center;
+  }
+
+  .nf-code {
+    font-size: clamp(6rem, 30vw, 10rem);
+    line-height: 1;
+    font-weight: 400;
+    margin: 0;
+    color: var(--accent);
+  }
+
+  .nf-line {
+    margin: 0;
+    max-width: 32ch;
+    color: var(--muted);
+    line-height: var(--lh-prose);
+  }
+
+  .nf-back {
+    font-size: var(--caption);
+    color: var(--muted);
+    margin-top: 1rem;
+  }
+  .nf-back:hover { color: var(--accent); }
+</style>
