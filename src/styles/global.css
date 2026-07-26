@@ -303,3 +303,26 @@ button:focus-visible {
 .row-link:hover {
   opacity: 0.92;
 }
+
+/* scroll reveal — only opacity/transform, no layout shift */
+.reveal figure {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  transition-delay: calc(var(--i) * 80ms);
+}
+
+.reveal.is-visible figure {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal figure {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

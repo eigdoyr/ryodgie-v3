@@ -30,3 +30,19 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     smoothScrollTo(targetY);
   });
 });
+
+const rows = document.querySelectorAll(".reveal");
+if (rows.length) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      }
+    },
+    { rootMargin: "0px 0px -10% 0px" },
+  );
+  rows.forEach((row) => io.observe(row));
+}
