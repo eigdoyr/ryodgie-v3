@@ -226,6 +226,10 @@ button:focus-visible {
   line-height: var(--lh-prose);
 }
 
+.about-cta {
+  padding-top: 2rem;
+}
+
 /* ---- footer ---- */
 .site-footer {
   display: flex;
