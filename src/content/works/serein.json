@@ -1,0 +1,30 @@
+{
+  "title": "SEREIN",
+  "medium": "web",
+  "series": "web layout",
+  "fonts": ["Jost", "Gabarito"],
+  "year": 2026,
+  "createdAt": "2026-01-01",
+  "images": [
+    {
+      "src": "../../assets/works/serein/01.jpg",
+      "alt": "Black editorial page with a large cream headline mixing upright and italic type about Serein whispering confidence, two columns of small-caps body copy, and an inset photo of a woman holding the fragrance bottle to her cheek.",
+      "weight": 1.1
+    },
+    {
+      "src": "../../assets/works/serein/02.jpg",
+      "alt": "Split hero: a deep red panel with THE Scent Of Calm headline and nav bar, beside a product shot of the Serein perfume bottle with a black domed cap on draped white fabric.",
+      "weight": 2.5
+    },
+    {
+      "src": "../../assets/works/serein/03.jpg",
+      "alt": "Black scent-notes section: a woman in red holding the Serein bottle beside grounded copy, above a large mixed upright-and-italic headline reading notes of iris, cedarwood, and rain-washed skin, punctuated by small inset images of iris petals, stacked cedar blocks, and dewy skin on red silk.",
+      "weight": 0.9
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 80,
+  "tags": ["web", "fragrance", "editorial", "typography", "branding"],
+  "colors": ["#151515", "#A11F2A", "#EFE7D8"]
+}
