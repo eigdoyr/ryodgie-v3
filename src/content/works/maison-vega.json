@@ -1,0 +1,25 @@
+{
+  "title": "MAISON VEGA",
+  "medium": "web",
+  "series": "web layout",
+  "fonts": ["Playfair Display", "Podkova"],
+  "year": 2026,
+  "createdAt": "2026-01-01",
+  "images": [
+    {
+      "src": "../../assets/works/maison-vega/01.jpg",
+      "alt": "Acid-green landing page with a nav bar and a street photo of a model in a pink bucket hat and neon fringed jacket, above a giant magenta maison vega serif wordmark and campaign note.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/maison-vega/02.jpg",
+      "alt": "Magenta index page listing three looks — the statement coat, the acid slip, the court set — above an oversized lime SS26 serif display mark with EST 2026.",
+      "weight": 1
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 90,
+  "tags": ["web", "fashion", "editorial", "typography", "maximalist"],
+  "colors": ["#C0F01A", "#EC0C9E"]
+}
