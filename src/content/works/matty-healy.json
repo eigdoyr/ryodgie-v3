@@ -1,0 +1,30 @@
+{
+  "title": "THE 1975",
+  "medium": "web",
+  "series": "web layout",
+  "fonts": ["Hiragino Kaku Gothic Std", "Doto"],
+  "year": 2026,
+  "createdAt": "2026-01-01",
+  "images": [
+    {
+      "src": "../../assets/works/matty-healy/01.jpg",
+      "alt": "Black-and-white hero of a curly-haired musician in headphones playing a Fender guitar, with a lime THE 1975 logo block and nav links, overlaid with a scattered grid of lime squares.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/matty-healy/02.jpg",
+      "alt": "Split layout: a lime panel of justified black bio copy about the band's frontman beside a monochrome photo of the singer at a mic stand, above a black footer of streaming-service links.",
+      "weight": 0.9
+    },
+    {
+      "src": "../../assets/works/matty-healy/03.jpg",
+      "alt": "Lime-duotone photo of the singer performing at a mic, centered behind a black square holding the lime THE 1975 wordmark.",
+      "weight": 1
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 0,
+  "tags": ["web", "music", "band", "typography", "monochrome"],
+  "colors": ["#AAFF00", "#0E0E0E"]
+}
