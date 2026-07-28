@@ -1,4 +1,6 @@
 ---
+import JsonLd from '../../components/JsonLd.astro';
+import { AUTHOR } from '../../lib/site';
 import { getWorks } from '../../lib/works';
 import { Picture } from 'astro:assets';
 import { getImage } from 'astro:assets';
@@ -20,9 +22,21 @@ const ogImg = await getImage({ src: images[0].src, format: 'jpg', width: 1200, h
 const descriptor = concept ? `${medium} concept` : medium;
 const pageTitle = `${title} — ${descriptor}, ${year} · Ryodgie Barnatia`;
 const description = images[0].alt || `${title}, ${descriptor} by Ryodgie Barnatia.`;
+
+const workSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VisualArtwork',
+  name: title,
+  creator: AUTHOR,
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  image: ogImg.src,
+  dateCreated: work.data.createdAt,
+  ...(work.data.liveUrl && { sameAs: work.data.liveUrl }),
+};
 ---
 
 <BaseLayout title={pageTitle} description={description} ogType="article" ogImage={ogImg.src}>
+  <JsonLd schema={workSchema} />
   <main class="project">
     <a class="back" href="/" id="back-link">← back to the wall</a>
 

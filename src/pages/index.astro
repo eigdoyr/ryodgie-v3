@@ -1,4 +1,6 @@
 ---
+import JsonLd from '../components/JsonLd.astro';
+import { EMAIL, SOCIALS, JOB_TITLE, AUTHOR } from '../lib/site';
 import Header from '../components/Header.astro';
 import FilterBar from '../components/FilterBar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -15,11 +17,20 @@ const filterData = works.map((w) => ({
   live: !!w.data.liveUrl,
   tags: w.data.tags,
 }));
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  ...AUTHOR,
+  email: `mailto:${EMAIL}`,
+  jobTitle: JOB_TITLE,
+  sameAs: [SOCIALS.linkedin, SOCIALS.dribbble, SOCIALS.github],
+};
 ---
 <BaseLayout
   title="Ryodgie Barnatia — Front-End Web Designer & Developer"
   description="Ryodgie Barnatia — front-end web designer and developer working in Astro, React, and Vue. A wall of live coded websites, editorial, type, and design experiments."
 >
+  <JsonLd schema={personSchema} />
   <main class="wall">
     <Header />
     <FilterBar />
