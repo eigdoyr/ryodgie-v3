@@ -10,7 +10,7 @@
 
   --font: var(--font-dm-sans);
   --text: 0.875rem;
-  --caption: 0.75rem;
+  --caption: 0.8125rem;
   --lh: 1.3;
   --lh-prose: 1.55;
 
@@ -138,7 +138,7 @@ button:focus-visible {
 }
 
 .pill {
-  font: inherit;
+  font-family: var(--font);
   font-size: var(--caption);
   color: var(--muted);
   background: transparent;
@@ -236,6 +236,64 @@ button:focus-visible {
   font-size: var(--caption);
   color: var(--muted);
   margin-top: var(--gap-caption);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cap-title {
+  color: var(--fg);
+}
+
+.cap-line {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.cap-meta {
+  color: var(--muted);
+}
+
+/* ---- swatches---- */
+.swatches {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+.swatch {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  background: var(--c);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.12s ease;
+}
+.swatch:hover {
+  transform: scale(1.15);
+}
+.swatch.copied::after {
+  content: "copied";
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: var(--muted);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* detail page: caption now on top */
+.project .caption {
+  margin-bottom: 3rem;
+}
+
+.live {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
 }
 
 /* ---- about ---- */
@@ -331,10 +389,6 @@ button:focus-visible {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.project .caption {
-  margin-top: 2rem;
 }
 
 .row-link {

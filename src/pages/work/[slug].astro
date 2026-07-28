@@ -26,6 +26,8 @@ const description = images[0].alt || `${title}, ${descriptor} by Ryodgie Barnati
   <main class="project">
     <a class="back" href="/" id="back-link">← back to the wall</a>
 
+    <Caption work={work} showLive showSwatches />
+
     <div class="project-frames">
       {images.map((img, i) => (
         <figure style={`aspect-ratio: ${img.src.width}/${img.src.height};`}>
@@ -40,8 +42,6 @@ const description = images[0].alt || `${title}, ${descriptor} by Ryodgie Barnati
         </figure>
       ))}
     </div>
-
-    <Caption work={work} showLive />
   </main>
 
   <script>
@@ -50,6 +50,18 @@ const description = images[0].alt || `${title}, ${descriptor} by Ryodgie Barnati
       e.preventDefault();
       history.back();
     }
+  });
+
+document.querySelectorAll<HTMLButtonElement>('.swatch').forEach((sw) => {
+    sw.addEventListener('click', async () => {
+      const hex = sw.dataset.hex;
+      if (!hex) return;
+      try {
+        await navigator.clipboard.writeText(hex);
+        sw.classList.add('copied');
+        setTimeout(() => sw.classList.remove('copied'), 1000);
+      } catch {}
+    });
   });
 </script>
 </BaseLayout>
