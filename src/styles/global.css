@@ -70,9 +70,25 @@ button:focus-visible {
   font-weight: 400;
   margin: 0;
 }
+
+.work img,
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.work picture,
+.project picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 /* ---- header ---- */
 .site-header {
   padding-top: 1.25rem;
+  margin-bottom: 6rem;
 }
 
 .top {
@@ -109,10 +125,6 @@ button:focus-visible {
   font-size: var(--caption);
   color: var(--muted);
   padding-top: 4rem;
-}
-
-.site-header {
-  margin-bottom: 6rem;
 }
 
 @media (max-width: 639px) {
@@ -222,20 +234,6 @@ button:focus-visible {
   .work {
     margin-bottom: var(--gap-between-m);
   }
-}
-
-/* <Picture> wraps in <picture>, which is inline by default */
-.work picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.work img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .caption {
@@ -382,19 +380,6 @@ button:focus-visible {
 
 .project figure {
   margin: 0;
-}
-
-.project picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.project img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .row-link {
