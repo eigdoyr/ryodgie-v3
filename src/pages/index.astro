@@ -19,18 +19,19 @@ const filterData = works.map((w) => ({
 <script src="../scripts/wall.js"></script>
 <BaseLayout
   title="Ryodgie Barnatia — Front-End Web Designer & Developer"
-  description="Ryodgie Barnatia — front-end web designer and developer working in Astro, React, and Vue. A wall of live coded websites, editorial, type, and design experiments."
+  description="..."
 >
   <main class="wall">
-    
-  <Header />
-  <FilterBar />
-  {works.map((work, i) => <WorkRow work={work} index={i} />)}
-  <p class="wall-empty" hidden>Nothing here yet — check back as the wall grows.</p>
-  <About />
-  <Footer />
-</main>
-<script is:inline define:vars={{ filterData }}>
-  window.__FILTERS = filterData;
-</script>
+    <Header />
+    <FilterBar />
+    {works.map((work, i) => <WorkRow work={work} index={i} />)}
+    <p class="wall-empty" hidden>Nothing here yet — check back as the wall grows.</p>
+    <About />
+    <Footer />
+  </main>
+
+  <script is:inline define:vars={{ filterData }}>
+    window.__FILTERS = filterData;
+  </script>
+  <script src="../scripts/wall.js"></script>
 </BaseLayout>
