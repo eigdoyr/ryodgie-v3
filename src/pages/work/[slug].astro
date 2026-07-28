@@ -24,7 +24,7 @@ const description = images[0].alt || `${title}, ${descriptor} by Ryodgie Barnati
 
 <BaseLayout title={pageTitle} description={description} ogType="article" ogImage={ogImg.src}>
   <main class="project">
-    <a class="back" href="/">← back to the wall</a>
+    <a class="back" href="/" id="back-link">← back to the wall</a>
 
     <div class="project-frames">
       {images.map((img, i) => (
@@ -43,4 +43,13 @@ const description = images[0].alt || `${title}, ${descriptor} by Ryodgie Barnati
 
     <Caption work={work} showLive />
   </main>
+
+  <script>
+  document.getElementById('back-link')?.addEventListener('click', (e) => {
+    if (document.referrer && new URL(document.referrer).pathname === '/') {
+      e.preventDefault();
+      history.back();
+    }
+  });
+</script>
 </BaseLayout>

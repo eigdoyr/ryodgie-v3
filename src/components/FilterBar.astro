@@ -1,0 +1,19 @@
+---
+const pills = [
+  { key: 'all',        label: 'All' },
+  { key: 'web',        label: 'Web' },
+  { key: 'live',       label: 'Live site' },
+  { key: 'monochrome', label: 'Monochrome' },
+  { key: 'loud',       label: 'Loud' },
+  { key: 'brand',      label: 'Brand' },
+];
+---
+<nav class="filters" aria-label="Filter projects">
+  {pills.map((p, i) => (
+    <button
+      class:list={['pill', { 'is-active': i === 0 }]}
+      data-filter={p.key}
+      aria-pressed={i === 0 ? 'true' : 'false'}
+    >{p.label}</button>
+  ))}
+</nav>

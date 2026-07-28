@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import FilterBar from '../components/FilterBar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WorkRow from '../components/WorkRow.astro';
 import About from '../components/About.astro';
@@ -7,6 +8,13 @@ import Footer from '../components/Footer.astro';
 import { getWall } from '../lib/works';
 
 const works = await getWall();
+
+const filterData = works.map((w) => ({
+  id: w.id,
+  medium: w.data.medium,
+  live: !!w.data.liveUrl,
+  tags: w.data.tags,
+}));
 ---
 <script src="../scripts/wall.js"></script>
 <BaseLayout
@@ -14,9 +22,14 @@ const works = await getWall();
   description="Ryodgie Barnatia — front-end web designer and developer working in Astro, React, and Vue. A wall of live coded websites, editorial, type, and design experiments."
 >
   <main class="wall">
+    
   <Header />
+  <FilterBar />
   {works.map((work, i) => <WorkRow work={work} index={i} />)}
   <About />
   <Footer />
 </main>
+<script is:inline define:vars={{ filterData }}>
+  window.__FILTERS = filterData;
+</script>
 </BaseLayout>

@@ -46,3 +46,59 @@ if (rows.length) {
   );
   rows.forEach((row) => io.observe(row));
 }
+
+// ---- filters ----
+const pills = document.querySelectorAll(".pill");
+const data = window.__FILTERS || [];
+
+const specialRules = {
+  all: () => true,
+  web: (w) => w.medium === "web",
+  live: (w) => w.live,
+  brand: (w) => w.medium === "brand",
+};
+
+function matches(key, w) {
+  if (specialRules[key]) return specialRules[key](w);
+  return w.tags.includes(key);
+}
+
+function applyFilter(key, updateURL = true, forceReveal = true) {
+  data.forEach((w) => {
+    const row = document.getElementById(`work-${w.id}`);
+    if (row) {
+      const show = matches(key, w);
+      row.hidden = !show;
+      if (show && forceReveal) row.classList.add("is-visible");
+    }
+  });
+  pills.forEach((p) => {
+    const active = p.dataset.filter === key;
+    p.classList.toggle("is-active", active);
+    p.setAttribute("aria-pressed", String(active));
+  });
+  if (updateURL) {
+    const url = key === "all" ? location.pathname : `?filter=${key}`;
+    history.replaceState(null, "", url);
+  }
+}
+
+pills.forEach((p) => {
+  p.addEventListener("click", () => applyFilter(p.dataset.filter));
+});
+
+// restore filter from URL — handles fresh load AND back/forward cache
+function restoreFromURL() {
+  const initial = new URLSearchParams(location.search).get("filter");
+  if (
+    initial &&
+    (specialRules[initial] || data.some((w) => w.tags.includes(initial)))
+  ) {
+    applyFilter(initial, false, false);
+  } else {
+    applyFilter("all", false, false);
+  }
+}
+
+restoreFromURL();
+addEventListener("pageshow", restoreFromURL);

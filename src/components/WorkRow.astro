@@ -10,7 +10,7 @@ const { images } = work.data;
 const weights = images.map((img) => img.weight);
 const total = weights.reduce((a, b) => a + b, 0);
 ---
-<article class="work reveal">
+<article class="work reveal" id={`work-${work.id}`}>
     <a class="row-link" href={`/work/${work.id}`}>
   <div class="row">
     {images.map((img, i) => {
