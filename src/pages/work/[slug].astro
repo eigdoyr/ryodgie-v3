@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
+import { getWorks } from '../../lib/works';
 import { Picture } from 'astro:assets';
 import { getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Caption from '../../components/Caption.astro';
 
 export async function getStaticPaths() {
-  const works = await getCollection('works', ({ data }) => data.visible);
+  const works = await getWorks();
   return works.map((work) => ({
     params: { slug: work.id },
     props: { work },
