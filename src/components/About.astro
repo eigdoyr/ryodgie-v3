@@ -1,5 +1,5 @@
 ---
-const email = 'hello@ryodgie.com';
+import { EMAIL } from '../lib/site';
 ---
 
 <section class="about" id="about">
@@ -21,7 +21,7 @@ const email = 'hello@ryodgie.com';
       things look, feel, and work for real people.
     </p>
     <p class="about-cta">
-        I make things nobody asked for. Ask me for something <a class="email" href="mailto:hello@ryodgie.com">hello@ryodgie.com</a> 
+        I make things nobody asked for. Ask me for something <a class="email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
     </p>
   </div>
 </section>
