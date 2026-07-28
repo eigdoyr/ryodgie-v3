@@ -2,7 +2,9 @@ import { getCollection, type CollectionEntry } from "astro:content";
 
 export type Work = CollectionEntry<"works">;
 
+export async function getWorks(): Promise<Work[]> {
+  return getCollection("works", ({ data }) => data.visible);
+}
 export async function getWall(): Promise<Work[]> {
-  const works = await getCollection("works", ({ data }) => data.visible);
-  return works.sort((a, b) => a.data.order - b.data.order);
+  return (await getWorks()).sort((a, b) => a.data.order - b.data.order);
 }
