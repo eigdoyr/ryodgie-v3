@@ -176,6 +176,12 @@ button:focus-visible {
   padding: 0 var(--pad-x);
 }
 
+.wall-empty {
+  color: var(--muted);
+  font-size: var(--caption);
+  padding: 4rem 0;
+}
+
 .work {
   margin-bottom: var(--gap-between);
 }
@@ -238,7 +244,7 @@ button:focus-visible {
   margin-top: var(--gap-caption);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0;
 }
 .cap-title {
   color: var(--fg);
@@ -247,7 +253,7 @@ button:focus-visible {
 .cap-line {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0;
 }
 .cap-meta {
   color: var(--muted);

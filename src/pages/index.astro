@@ -26,6 +26,7 @@ const filterData = works.map((w) => ({
   <Header />
   <FilterBar />
   {works.map((work, i) => <WorkRow work={work} index={i} />)}
+  <p class="wall-empty" hidden>Nothing here yet — check back as the wall grows.</p>
   <About />
   <Footer />
 </main>

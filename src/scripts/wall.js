@@ -64,14 +64,22 @@ function matches(key, w) {
 }
 
 function applyFilter(key, updateURL = true, forceReveal = true) {
+  let visibleCount = 0;
   data.forEach((w) => {
     const row = document.getElementById(`work-${w.id}`);
     if (row) {
       const show = matches(key, w);
       row.hidden = !show;
-      if (show && forceReveal) row.classList.add("is-visible");
+      if (show) {
+        visibleCount++;
+        if (forceReveal) row.classList.add("is-visible");
+      }
     }
   });
+
+  const empty = document.querySelector(".wall-empty");
+  if (empty) empty.hidden = visibleCount > 0;
+
   pills.forEach((p) => {
     const active = p.dataset.filter === key;
     p.classList.toggle("is-active", active);
