@@ -47,6 +47,32 @@ if (rows.length) {
   rows.forEach((row) => io.observe(row));
 }
 
+// ---- load more ----
+const BATCH = 9;
+const allRows = [...document.querySelectorAll(".work")];
+const loadMoreBtn = document.querySelector(".load-more");
+let shown = BATCH;
+
+function applyLoadMore() {
+  allRows.forEach((row, i) => {
+    row.dataset.beyond = i >= shown ? "true" : "false";
+  });
+  if (loadMoreBtn) loadMoreBtn.hidden = shown >= allRows.length;
+}
+
+if (allRows.length > BATCH) {
+  applyLoadMore();
+  loadMoreBtn?.addEventListener("click", () => {
+    const prevShown = shown;
+    shown += BATCH;
+    applyLoadMore();
+    // mark newly-revealed rows so only THEY animate
+    allRows.forEach((row, i) => {
+      if (i >= prevShown && i < shown) row.classList.add("load-reveal");
+    });
+  });
+}
+
 // ---- filters ----
 const pills = document.querySelectorAll(".pill");
 const data = window.__FILTERS || [];
@@ -79,6 +105,16 @@ function applyFilter(key, updateURL = true, forceReveal = true) {
 
   const empty = document.querySelector(".wall-empty");
   if (empty) empty.hidden = visibleCount > 0;
+
+  if (loadMoreBtn) {
+    if (key === "all") {
+      shown = BATCH;
+      applyLoadMore();
+    } else {
+      allRows.forEach((row) => (row.dataset.beyond = "false"));
+      loadMoreBtn.hidden = true;
+    }
+  }
 
   pills.forEach((p) => {
     const active = p.dataset.filter === key;
