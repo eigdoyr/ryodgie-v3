@@ -317,9 +317,14 @@ button:focus-visible {
 }
 
 .about-body p {
+  color: var(--muted);
   margin: 0 0 1rem;
   max-width: 44ch;
   line-height: var(--lh-prose);
+}
+
+.about-body .highlight {
+  color: var(--fg);
 }
 
 .about-cta {
