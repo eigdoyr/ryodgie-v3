@@ -1,0 +1,25 @@
+{
+  "title": "BENSON BOONE - Mystical Magical Tour",
+  "medium": "web",
+  "series": "web layout",
+  "fonts": ["DIN Condensed", "Mr Dafoe"],
+  "year": 2026,
+  "createdAt": "2026-01-01",
+  "images": [
+    {
+      "src": "../../assets/works/benson-boone/01a.jpg",
+      "alt": "Red-lit concert web layout of a silhouetted crowd with raised hands; bold red BENSoN BOoNE lettering with yellow mystical magical script overlaid",
+      "weight": 0.8
+    },
+    {
+      "src": "../../assets/works/benson-boone/02a.jpg",
+      "alt": "Red-toned tour web layout of a singer; cream and yellow city names list Los Angeles, San Jose, Pasadena, Sacramento, San Diego",
+      "weight": 0.5
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 7,
+  "tags": ["poster", "concert", "music", "typography", "tour"],
+  "colors": ["#1A0505", "#E8231A", "#F0B94A"]
+}
