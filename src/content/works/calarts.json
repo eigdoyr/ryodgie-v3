@@ -1,0 +1,25 @@
+{
+  "title": "CalArts Exhibition '26",
+  "medium": "web",
+  "series": "web layout",
+  "fonts": ["Fjalla One", "Ga Maamli"],
+  "year": 2026,
+  "createdAt": "2026-08-04",
+  "images": [
+    {
+      "src": "../../assets/works/calarts/01.jpg",
+      "alt": "Cream exhibition landing page with an oversized red CAL ARTS wordmark layered behind black-and-white photos of a profile portrait, reaching hands, and a crowded staircase.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/calarts/02.jpg",
+      "alt": "Cream info page with a large red quotation-mark shape and gallery dates beside a photo of a museum interior hung with framed paintings, plus a column of exhibition body copy.",
+      "weight": 1
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 5,
+  "tags": ["web", "exhibition", "editorial", "typography", "gallery"],
+  "colors": ["#EEF2D5", "#F51E14", "#1A1A1A"]
+}

@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "stamp": "node embed-copyright.mjs"
+    "stamp": "node scripts/embed-copyright.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
