@@ -1,0 +1,30 @@
+{
+  "title": "VOGUE",
+  "medium": "editorial",
+  "series": "digital edition",
+  "fonts": ["Jacques François", "Gentium Basic"],
+  "year": 2026,
+  "createdAt": "2026-08-04",
+  "images": [
+    {
+      "src": "../../assets/works/vogue/01.jpg",
+      "alt": "Vogue digital cover on off-white, with a serif Archive & Horizons headline over a warm-toned photo of three models reclining together and a small black-and-white portrait of a man reading a magazine.",
+      "weight": 0.8
+    },
+    {
+      "src": "../../assets/works/vogue/02.jpg",
+      "alt": "Editorial spread with an enormous serif 1961 numeral, a black-and-white portrait of a face behind tulle, justified body copy on intentional fashion, and a cropped color detail of leopard print and jewelry.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/vogue/03.jpg",
+      "alt": "Closing spread with two warm golden-hour portraits of a model holding a Vogue issue, an oversized lowercase vogue wordmark, body copy on silhouette and color, and a city index: Paris, New York, Milan, Tokyo, London.",
+      "weight": 0.9
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 15,
+  "tags": ["editorial", "fashion", "typography", "print"],
+  "colors": ["#F2F0EB", "#1A1A1A", "#8A6A44"]
+}
