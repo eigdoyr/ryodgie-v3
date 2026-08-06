@@ -1,0 +1,25 @@
+{
+  "title": "SUB-ZERO",
+  "medium": "editorial",
+  "series": "type study",
+  "fonts": ["Grenze Gotisch", "Gulzar"],
+  "year": 2026,
+  "createdAt": "2026-08-06",
+  "images": [
+    {
+      "src": "../../assets/works/sub-zero/01.jpg",
+      "alt": "Editorial spread: a red-kitted ice hockey player mid-slapshot on the left, beside a large maroon 1Z monogram, a blackletter subtitle 'A Study in Sub-Zero Dynamics', and body copy numbered 01.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/sub-zero/02.jpg",
+      "alt": "Deep red spread with oversized white blackletter type reading 'Silent Glide, Shattering Impact' overprinting a photo of a hockey player shooting, plus two columns of body copy on the mechanics of the game.",
+      "weight": 1.1
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 45,
+  "tags": ["editorial", "typography", "sport", "loud"],
+  "colors": ["#9D383A", "#F6F6F6"]
+}
