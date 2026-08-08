@@ -1,0 +1,30 @@
+{
+  "title": "ATELIER 05",
+  "medium": "brand",
+  "series": "studio identity",
+  "fonts": ["Instrument Serif", "LINE Seed JP"],
+  "year": 2026,
+  "createdAt": "2026-07-29",
+  "images": [
+    {
+      "src": "../../assets/works/atelier/01.jpg",
+      "alt": "Split studio landing page: a group portrait of six people in streetwear on a black sofa beside an olive panel with nav links, service lines, contact details, and a large lowercase atelier wordmark with an 05 badge.",
+      "weight": 2.2
+    },
+    {
+      "src": "../../assets/works/atelier/02.jpg",
+      "alt": "Cream poster with staggered olive serif type reading Find the Groove, Live in the Grid — the 05 badge nested inside the O — above a seated figure in head-to-toe beige monogram print, face obscured.",
+      "weight": 1.8
+    },
+    {
+      "src": "../../assets/works/atelier/03.jpg",
+      "alt": "Brand mockup on a green workwear jacket: layered translucent cards in charcoal, olive, and cream carrying the 05 badge and a statement about editorial layout meeting digital experience.",
+      "weight": 1.7
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 6,
+  "tags": ["brand", "identity", "editorial", "typography"],
+  "colors": ["#847E60", "#E1DAC3", "#242424"]
+}
