@@ -20,6 +20,6 @@
   "concept": true,
   "visible": true,
   "order": 5,
-  "tags": ["web", "exhibition", "editorial", "typography", "gallery"],
+  "tags": ["web", "exhibition", "editorial", "typography", "gallery", "tonal"],
   "colors": ["#EEF2D5", "#F51E14", "#1A1A1A"]
 }
