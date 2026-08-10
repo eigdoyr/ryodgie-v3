@@ -1,0 +1,30 @@
+{
+  "title": "RENAISSANCE UNFIXED",
+  "medium": "editorial",
+  "series": "fashion editorial",
+  "fonts": ["Sofia Sans Extra Condensed", "Pinyon Script"],
+  "year": 2026,
+  "createdAt": "2026-08-10",
+  "images": [
+    {
+      "src": "../../assets/works/renaissance-unfixed/01.jpg",
+      "alt": "Blush cover with oversized red RENAISSANCE UNFIXED headline overlaid by a looping script U, beside a photo of a model in a crocheted crown, white sunglasses, and a gold-embellished navy blazer.",
+      "weight": 1.7
+    },
+    {
+      "src": "../../assets/works/renaissance-unfixed/02.jpg",
+      "alt": "Split spread: a red panel titled The Modern Dauphin listing garment details in condensed caps, next to a full-length runway shot of the embellished naval blazer and wide-leg trousers.",
+      "weight": 1.1
+    },
+    {
+      "src": "../../assets/works/renaissance-unfixed/03.jpg",
+      "alt": "Blush editorial page with a close-up of the gold safety-pin embroidered blazer, a headline reading Essay on Tailoring and Silhouette, and dense justified body copy under The Heirloom Paradox.",
+      "weight": 1.1
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 12,
+  "tags": ["editorial", "fashion", "typography", "loud"],
+  "colors": ["#E73121", "#2F2C2B", "#FEF2F2"]
+}
