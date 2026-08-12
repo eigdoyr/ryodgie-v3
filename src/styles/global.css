@@ -23,6 +23,12 @@
   --max-w: 2000px;
 }
 
+@media (max-width: 639px) {
+  :root {
+    --pad-x: 16px;
+  }
+}
+
 html {
   background: var(--bg);
   scrollbar-gutter: stable;
@@ -94,7 +100,7 @@ button:focus-visible {
 .top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 23.75rem;
+  margin-bottom: clamp(20rem, 22vh, 23.75rem);
 }
 
 .intro {
@@ -146,7 +152,7 @@ button:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: var(--gap-between);
+  margin-bottom: 3rem;
 }
 
 .pill {
@@ -176,7 +182,7 @@ button:focus-visible {
 
 @media (max-width: 639px) {
   .filters {
-    margin-bottom: var(--gap-between-m);
+    margin-bottom: 2rem;
   }
 }
 
