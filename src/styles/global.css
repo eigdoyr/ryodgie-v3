@@ -401,7 +401,7 @@ button:focus-visible {
 .project-frames {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-in);
+  gap: 2rem;
 }
 
 .project figure {
