@@ -392,7 +392,21 @@ button:focus-visible {
   color: inherit;
 }
 
-/* scroll reveal — only opacity/transform, no layout shift */
+/* ---- motion ---- */
+
+/* one keyframe for every entrance; distance varies via --rise */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--rise, 24px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* scroll reveal — figures fade+rise as their row enters view */
 .reveal figure {
   opacity: 0;
   transform: translateY(24px);
@@ -407,13 +421,52 @@ button:focus-visible {
   transform: translateY(0);
 }
 
+/* load more — whole rows animate in on click */
+.work.load-reveal {
+  animation: rise-in 0.6s ease both;
+}
+
+/* header entrance — same motion, shorter travel */
+.site-header .top,
+.site-header .intro-left,
+.site-header .intro-right {
+  --rise: 16px;
+  animation: rise-in 0.7s ease both;
+}
+
+.site-header .top {
+  animation-delay: 0s;
+}
+.site-header .intro-left {
+  animation-delay: 0.12s;
+}
+.site-header .intro-right {
+  animation-delay: 0.2s;
+}
+
+/* pills — stagger driven by --i set in FilterBar.astro */
+.pill {
+  --rise: 16px;
+  animation: rise-in 0.5s ease both;
+  animation-delay: calc(0.28s + var(--i, 0) * 0.05s);
+}
+
+/* one place to disable all motion */
 @media (prefers-reduced-motion: reduce) {
-  .reveal figure {
+  .reveal figure,
+  .work.load-reveal,
+  .site-header .top,
+  .site-header .intro-left,
+  .site-header .intro-right,
+  .pill {
+    animation: none;
+    transition: none;
     opacity: 1;
     transform: none;
-    transition: none;
   }
 }
+
+/* ---- load more button + hidden rows ---- */
 .load-more:not([hidden]) {
   display: block;
   margin: 0 auto var(--gap-between);
@@ -421,25 +474,4 @@ button:focus-visible {
 
 .work[data-beyond="true"] {
   display: none;
-}
-
-.work.load-reveal {
-  animation: reveal-in 0.6s ease both;
-}
-
-@keyframes reveal-in {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .work.load-reveal {
-    animation: none;
-  }
 }

@@ -10,10 +10,11 @@ const pills = [
 ---
 <nav class="filters" aria-label="Filter projects">
   {pills.map((p, i) => (
-    <button
-      class:list={['pill', { 'is-active': i === 0 }]}
-      data-filter={p.key}
-      aria-pressed={i === 0 ? 'true' : 'false'}
-    >{p.label}</button>
-  ))}
+  <button
+    class:list={['pill', { 'is-active': i === 0 }]}
+    style={`--i: ${i};`}
+    data-filter={p.key}
+    aria-pressed={i === 0 ? 'true' : 'false'}
+  >{p.label}</button>
+))}
 </nav>
