@@ -391,9 +391,6 @@ button:focus-visible {
   display: block;
   color: inherit;
 }
-.row-link:hover {
-  opacity: 0.92;
-}
 
 /* scroll reveal — only opacity/transform, no layout shift */
 .reveal figure {
