@@ -346,6 +346,21 @@ button:focus-visible {
 }
 
 @media (max-width: 639px) {
+  .site-footer {
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 5rem;
+    align-items: flex-start;
+  }
+  .to-top {
+    align-self: flex-end;
+  }
+  .social {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 639px) {
   .about {
     flex-direction: column;
     gap: 1rem;
