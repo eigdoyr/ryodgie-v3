@@ -1,0 +1,25 @@
+{
+  "title": "GERRY RAFFERTY",
+  "medium": "editorial",
+  "series": "music essay",
+  "fonts": ["Asta Sans"],
+  "year": 2026,
+  "createdAt": "2026-08-14",
+  "images": [
+    {
+      "src": "../../assets/works/gerry-rafferty/01.png",
+      "alt": "Tan editorial page with a bold Gerry Rafferty headline, a black-and-white live photo, and dense body copy about Right Down the Line, overlaid by oversized chartreuse display type.",
+      "weight": 0.6
+    },
+    {
+      "src": "../../assets/works/gerry-rafferty/02.png",
+      "alt": "Chartreuse spread titled Retrospective No.1978 — Archival Sonics, with three columns of black body copy on the song's production and legacy, plus marginal figure notes and chart positions.",
+      "weight": 0.5
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 18,
+  "tags": ["editorial", "music", "typography", "tonal"],
+  "colors": ["#0E0E0E", "#DFE240", "#CCB694"]
+}
