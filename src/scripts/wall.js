@@ -48,7 +48,7 @@ if (rows.length) {
 }
 
 // ---- load more ----
-const BATCH = 9;
+const BATCH = 10;
 const allRows = [...document.querySelectorAll(".work")];
 const loadMoreBtn = document.querySelector(".load-more");
 let shown = BATCH;
