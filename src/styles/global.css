@@ -302,7 +302,6 @@ button:focus-visible {
 
 .live {
   display: inline-block;
-  margin-top: 1rem;
   color: var(--accent);
 }
 
@@ -411,6 +410,69 @@ button:focus-visible {
 .row-link {
   display: block;
   color: inherit;
+}
+
+/* ---- project header ---- */
+.project-header {
+  display: flex;
+  gap: var(--gap-in);
+  margin-bottom: 4rem;
+}
+
+.ph-title,
+.ph-meta {
+  flex: 1 1 0;
+}
+
+.ph-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.ph-name {
+  color: var(--fg);
+}
+
+.ph-series {
+  color: var(--muted);
+}
+
+.ph-meta {
+  margin: 0;
+}
+
+.ph-row {
+  display: flex;
+  /* gap: 1.5rem; */
+  padding: 0.5rem 0;
+}
+
+.ph-row:first-child {
+  padding-top: 0;
+}
+
+.ph-row dd .swatches {
+  margin-top: 0;
+}
+
+.ph-row dt {
+  flex: 0 0 30%;
+  color: var(--muted);
+}
+
+.ph-row dd {
+  margin: 0;
+  color: var(--fg);
+}
+
+@media (max-width: 639px) {
+  .project-header {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .ph-row dt {
+    flex-basis: 40%;
+  }
 }
 
 /* ---- motion ---- */
