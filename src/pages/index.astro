@@ -25,6 +25,25 @@ const personSchema = {
   jobTitle: JOB_TITLE,
   sameAs: [SOCIALS.linkedin, SOCIALS.dribbble, SOCIALS.github],
 };
+
+
+// newest first, by createdAt
+const byDate = [...works].sort((a, b) =>
+  b.data.createdAt.localeCompare(a.data.createdAt)
+);
+
+const DAYS = 60;
+const cutoff = Date.now() - DAYS * 24 * 60 * 60 * 1000;
+
+const latestId = byDate[0]?.id ?? null;
+
+// up to 4 more, each within the window
+const newIds = new Set(
+  byDate
+    .slice(1, 5)
+    .filter((w) => new Date(w.data.createdAt).getTime() >= cutoff)
+    .map((w) => w.id)
+);
 ---
 <BaseLayout
   title="Ryodgie Barnatia — Front-End Web Designer & Developer"
@@ -34,7 +53,13 @@ const personSchema = {
   <main class="wall">
     <Header />
     <FilterBar />
-    {works.map((work, i) => <WorkRow work={work} index={i} />)}
+    {works.map((work, i) => (
+  <WorkRow
+    work={work}
+    index={i}
+    badge={work.id === latestId ? 'Latest' : newIds.has(work.id) ? 'New' : null}
+  />
+))}
     <p class="wall-empty" hidden>Nothing here yet — check back as the wall grows.</p>
     <button class="btn-accent load-more" hidden>Load more</button>
     <About />

@@ -3,8 +3,8 @@ import { Picture } from 'astro:assets';
 import Caption from './Caption.astro';
 import type { Work } from '../lib/works';
 
-interface Props { work: Work; index: number }
-const { work, index } = Astro.props;
+interface Props { work: Work; index: number; badge?: string | null }
+const { work, index, badge = null } = Astro.props;
 const { images } = work.data;
 
 const weights = images.map((img) => img.weight);
@@ -31,6 +31,6 @@ const total = weights.reduce((a, b) => a + b, 0);
     })}
   </div>
   </a>
-  <Caption work={work} />
+  <Caption work={work} badge={badge} />
 </article>
 

@@ -558,3 +558,23 @@ button:focus-visible {
 .work[data-beyond="true"] {
   display: none;
 }
+
+.badge {
+  align-self: flex-start;
+  margin-top: 2px;
+  padding: 2px 5px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 8px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cap-title {
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
