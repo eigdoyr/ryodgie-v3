@@ -1,12 +1,11 @@
 ---
 import JsonLd from '../../components/JsonLd.astro';
-import { descriptorOf } from '../../lib/works';
 import { AUTHOR } from '../../lib/site';
-import { getWorks } from '../../lib/works';
 import { Picture } from 'astro:assets';
 import { getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectHeader from '../../components/ProjectHeader.astro';
+import { getWorks, getNeighbors, descriptorOf } from '../../lib/works';
 
 export async function getStaticPaths() {
   const works = await getWorks();
@@ -23,6 +22,7 @@ const ogImg = await getImage({ src: images[0].src, format: 'jpg', width: 1200, h
 const descriptor = descriptorOf(work);
 const pageTitle = `${title} — ${descriptor}, ${year} · Ryodgie Barnatia`;
 const description = images[0].alt || `${title}, ${descriptor} by Ryodgie Barnatia.`;
+const { prev, next } = await getNeighbors(work.id);
 
 const workSchema = {
   '@context': 'https://schema.org',
@@ -57,9 +57,30 @@ const workSchema = {
         </figure>
       ))}
     </div>
-  </main>
+    <nav class="project-nav">
+      {prev ? (
+        <a class="pn-link" href={`/work/${prev.id}`}>
+          <span class="pn-label">Previous</span>
+          <span class="pn-title">{prev.data.title}</span>
+        </a>
+      ) : <span />}
 
-  <script>
+      {next ? (
+        <a class="pn-link pn-next" href={`/work/${next.id}`}>
+          <span class="pn-label">Next</span>
+          <span class="pn-title">{next.data.title}</span>
+        </a>
+      ) : <span />}
+    </nav>
+  </main>
+  
+
+  <script define:vars={{ prevUrl: prev ? `/work/${prev.id}` : null, nextUrl: next ? `/work/${next.id}` : null }}>
+  addEventListener('keydown', (e) => {
+    if (e.target.closest('input, textarea')) return;
+    if (e.key === 'ArrowLeft' && prevUrl) location.href = prevUrl;
+    if (e.key === 'ArrowRight' && nextUrl) location.href = nextUrl;
+  });
   document.getElementById('back-link')?.addEventListener('click', (e) => {
     if (document.referrer && new URL(document.referrer).pathname === '/') {
       e.preventDefault();
@@ -67,7 +88,7 @@ const workSchema = {
     }
   });
 
-document.querySelectorAll<HTMLButtonElement>('.swatch').forEach((sw) => {
+  document.querySelectorAll<HTMLButtonElement>('.swatch').forEach((sw) => {
     sw.addEventListener('click', async () => {
       const hex = sw.dataset.hex;
       if (!hex) return;

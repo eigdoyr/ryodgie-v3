@@ -578,3 +578,55 @@ button:focus-visible {
   align-items: center;
   gap: 0.5rem;
 }
+
+.project-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 6rem;
+  font-size: var(--caption);
+}
+
+.pn-link {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pn-next {
+  text-align: right;
+}
+
+.pn-label {
+  color: var(--muted);
+}
+
+.pn-title {
+  color: var(--fg);
+}
+
+.pn-link:hover .pn-title {
+  color: var(--accent);
+}
+
+.pn-back {
+  color: var(--muted);
+}
+
+.pn-back:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .project-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+  .pn-next {
+    text-align: right;
+    align-self: stretch;
+  }
+}
