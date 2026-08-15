@@ -2,33 +2,20 @@
 import type { Work } from '../lib/works';
 import { descriptorOf } from '../lib/works';
 
-interface Props { work: Work; showLive?: boolean; showSwatches?: boolean }
-const { work, showLive = false, showSwatches = false } = Astro.props;
-const { title, series, medium, concept, year, fonts, liveUrl, colors } = work.data;
-
 interface Props { work: Work; badge?: string | null }
-const { badge = null } = Astro.props;
+const { work, badge = null } = Astro.props;
+const { title, series, year, fonts } = work.data;
 
 const descriptor = descriptorOf(work);
 const head = series ? `${title} // ${series}` : title;
 ---
 <div class="caption">
-<div class="cap-line">
-  <span class="cap-title">
-    {head}
-    {badge && <span class="badge">{badge}</span>}
-  </span>
-  <span class="cap-meta">{descriptor}, {year}</span>
-</div>
+  <div class="cap-line">
+    <span class="cap-title">
+      {head}
+      {badge && <span class="badge">{badge}</span>}
+    </span>
+    <span class="cap-meta">{descriptor}, {year}</span>
+  </div>
   <div>Fonts: {fonts.join(' & ')}</div>
-  {showSwatches && colors.length > 0 && (
-    <div class="swatches">
-      {colors.map((c) => (
-        <button class="swatch" style={`--c: ${c};`} data-hex={c} aria-label={`Copy ${c}`} title={c}></button>
-      ))}
-    </div>
-  )}
-  {showLive && liveUrl && (
-    <a class="live" href={liveUrl} rel="noopener" target="_blank">view live site →</a>
-  )}
 </div>
