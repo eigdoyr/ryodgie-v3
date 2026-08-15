@@ -1,10 +1,9 @@
 ---
-import type { Work } from '../lib/works';
-import { descriptorOf } from '../lib/works';
+import { descriptorOf, type Work } from '../lib/works';
 
 interface Props { work: Work }
 const { work } = Astro.props;
-const { title, series, medium, concept, year, fonts, liveUrl, colors } = work.data;
+const { title, series, year, fonts, liveUrl, colors } = work.data;
 
 const descriptor = descriptorOf(work);
 ---
@@ -20,10 +19,12 @@ const descriptor = descriptorOf(work);
       <dd>{descriptor}, {year}</dd>
     </div>
 
-    <div class="ph-row">
-      <dt>Fonts</dt>
-      <dd>{fonts.length ? fonts.join(' & ') : '—'}</dd>
-    </div>
+    {fonts.length > 0 && (
+  <div class="ph-row">
+    <dt>Fonts</dt>
+    <dd>{fonts.join(' & ')}</dd>
+  </div>
+)}
 
     {colors.length > 0 && (
       <div class="ph-row">
