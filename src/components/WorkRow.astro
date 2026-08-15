@@ -9,13 +9,15 @@ const { images } = work.data;
 
 const weights = images.map((img) => img.weight);
 const total = weights.reduce((a, b) => a + b, 0);
+
+const MAX_W = 2000; 
 ---
 <article class="work reveal" id={`work-${work.id}`}>
     <a class="row-link" href={`/work/${work.id}`}>
   <div class="row">
     {images.map((img, i) => {
       const fraction = weights[i] / total;
-        const sizes = `(max-width: 639px) 100vw, (max-width: 1024px) 50vw, (max-width: 2048px) ${(fraction * 100).toFixed(1)}vw, ${Math.round(fraction * 2000)}px`;
+        const sizes = `(max-width: 639px) 100vw, (max-width: 1024px) 50vw, (max-width: 2048px) ${(fraction * 100).toFixed(1)}vw, ${Math.round(fraction * MAX_W)}px`;
      return (
         <figure style={`--ar: ${img.src.width}/${img.src.height}; --grow: ${img.weight}; --i: ${i};`}>        
         <Picture
