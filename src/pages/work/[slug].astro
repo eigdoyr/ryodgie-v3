@@ -1,5 +1,6 @@
 ---
 import JsonLd from '../../components/JsonLd.astro';
+import { descriptorOf } from '../../lib/works';
 import { AUTHOR } from '../../lib/site';
 import { getWorks } from '../../lib/works';
 import { Picture } from 'astro:assets';
@@ -19,7 +20,7 @@ const { work } = Astro.props;
 const { title, medium, concept, year, images } = work.data;
 const ogImg = await getImage({ src: images[0].src, format: 'jpg', width: 1200, height: 630, fit: 'cover' });
 
-const descriptor = concept ? `${medium} concept` : medium;
+const descriptor = descriptorOf(work);
 const pageTitle = `${title} — ${descriptor}, ${year} · Ryodgie Barnatia`;
 const description = images[0].alt || `${title}, ${descriptor} by Ryodgie Barnatia.`;
 
