@@ -1,16 +1,37 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import JsonLd from '../components/JsonLd.astro';
-import { EMAIL, SOCIALS, JOB_TITLE, AUTHOR } from '../lib/site';
 import Header from '../components/Header.astro';
 import FilterBar from '../components/FilterBar.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
 import WorkRow from '../components/WorkRow.astro';
 import About from '../components/About.astro';
 import Footer from '../components/Footer.astro';
 import { getWall } from '../lib/works';
+import { EMAIL, SOCIALS, JOB_TITLE, AUTHOR } from '../lib/site';
 
 const works = await getWall();
 
+// ---- badges: newest gets "Latest", next 4 within the window get "New" ----
+const DAYS = 60;
+const cutoff = Date.now() - DAYS * 24 * 60 * 60 * 1000;
+
+const byDate = [...works].sort((a, b) =>
+  b.data.createdAt.localeCompare(a.data.createdAt),
+);
+
+const latestId = byDate[0]?.id ?? null;
+
+const newIds = new Set(
+  byDate
+    .slice(1, 5)
+    .filter((w) => new Date(w.data.createdAt).getTime() >= cutoff)
+    .map((w) => w.id),
+);
+
+const badgeFor = (id: string) =>
+  id === latestId ? 'Latest' : newIds.has(id) ? 'New' : null;
+
+// ---- data handed to the client filter script ----
 const filterData = works.map((w) => ({
   id: w.id,
   medium: w.data.medium,
@@ -18,6 +39,7 @@ const filterData = works.map((w) => ({
   tags: w.data.tags,
 }));
 
+// ---- structured data ----
 const personSchema = {
   '@context': 'https://schema.org',
   ...AUTHOR,
@@ -25,43 +47,25 @@ const personSchema = {
   jobTitle: JOB_TITLE,
   sameAs: [SOCIALS.linkedin, SOCIALS.dribbble, SOCIALS.github],
 };
-
-
-// newest first, by createdAt
-const byDate = [...works].sort((a, b) =>
-  b.data.createdAt.localeCompare(a.data.createdAt)
-);
-
-const DAYS = 60;
-const cutoff = Date.now() - DAYS * 24 * 60 * 60 * 1000;
-
-const latestId = byDate[0]?.id ?? null;
-
-// up to 4 more, each within the window
-const newIds = new Set(
-  byDate
-    .slice(1, 5)
-    .filter((w) => new Date(w.data.createdAt).getTime() >= cutoff)
-    .map((w) => w.id)
-);
 ---
+
 <BaseLayout
   title="Ryodgie Barnatia — Front-End Web Designer & Developer"
   description="Ryodgie Barnatia — front-end web designer and developer working in Astro, React, and Vue. A wall of live coded websites, editorial, type, and design experiments."
 >
   <JsonLd schema={personSchema} />
+
   <main class="wall">
     <Header />
     <FilterBar />
+
     {works.map((work, i) => (
-  <WorkRow
-    work={work}
-    index={i}
-    badge={work.id === latestId ? 'Latest' : newIds.has(work.id) ? 'New' : null}
-  />
-))}
+      <WorkRow work={work} index={i} badge={badgeFor(work.id)} />
+    ))}
+
     <p class="wall-empty" hidden>Nothing here yet — check back as the wall grows.</p>
     <button class="btn-accent load-more" hidden>Load more</button>
+
     <About />
     <Footer />
   </main>
