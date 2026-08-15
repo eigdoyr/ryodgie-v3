@@ -14,12 +14,13 @@ export async function GET(context) {
     description:
       "A wall of design work — live coded websites, editorial, type, and design experiments.",
     site: context.site,
+    xmlns: { atom: "http://www.w3.org/2005/Atom" },
     items: byDate.map((work) => ({
       title: work.data.title,
       pubDate: new Date(work.data.createdAt),
       description: `${work.data.title} — ${descriptorOf(work)}, ${work.data.year}`,
       link: `/work/${work.id}/`,
     })),
-    customData: `<language>en-us</language>`,
+    customData: `<language>en-us</language><atom:link href="${new URL("/rss.xml", context.site)}" rel="self" type="application/rss+xml" />`,
   });
 }
