@@ -1,8 +1,7 @@
 ---
 import JsonLd from '../../components/JsonLd.astro';
 import { AUTHOR } from '../../lib/site';
-import { Picture } from 'astro:assets';
-import { getImage } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectHeader from '../../components/ProjectHeader.astro';
 import { getWorks, getNeighbors, descriptorOf } from '../../lib/works';
@@ -16,7 +15,7 @@ export async function getStaticPaths() {
 }
 
 const { work } = Astro.props;
-const { title, medium, concept, year, images } = work.data;
+const { title, year, images } = work.data;
 const ogImg = await getImage({ src: images[0].src, format: 'jpg', width: 1200, height: 630, fit: 'cover' });
 
 const descriptor = descriptorOf(work);
@@ -75,29 +74,24 @@ const workSchema = {
   </main>
   
 
-  <script define:vars={{ prevUrl: prev ? `/work/${prev.id}` : null, nextUrl: next ? `/work/${next.id}` : null }}>
-  addEventListener('keydown', (e) => {
-    if (e.target.closest('input, textarea')) return;
-    if (e.key === 'ArrowLeft' && prevUrl) location.href = prevUrl;
-    if (e.key === 'ArrowRight' && nextUrl) location.href = nextUrl;
-  });
-  document.getElementById('back-link')?.addEventListener('click', (e) => {
-    if (document.referrer && new URL(document.referrer).pathname === '/') {
-      e.preventDefault();
-      history.back();
-    }
-  });
-
-  document.querySelectorAll<HTMLButtonElement>('.swatch').forEach((sw) => {
-    sw.addEventListener('click', async () => {
-      const hex = sw.dataset.hex;
-      if (!hex) return;
-      try {
-        await navigator.clipboard.writeText(hex);
-        sw.classList.add('copied');
-        setTimeout(() => sw.classList.remove('copied'), 1000);
-      } catch {}
+ <script>
+    document.getElementById('back-link')?.addEventListener('click', (e) => {
+      if (document.referrer && new URL(document.referrer).pathname === '/') {
+        e.preventDefault();
+        history.back();
+      }
     });
-  });
-</script>
+
+    document.querySelectorAll<HTMLButtonElement>('.swatch').forEach((sw) => {
+      sw.addEventListener('click', async () => {
+        const hex = sw.dataset.hex;
+        if (!hex) return;
+        try {
+          await navigator.clipboard.writeText(hex);
+          sw.classList.add('copied');
+          setTimeout(() => sw.classList.remove('copied'), 1000);
+        } catch {}
+      });
+    });
+  </script>
 </BaseLayout>
