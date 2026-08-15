@@ -23,7 +23,7 @@
     }
   ],
   "concept": true,
-  "visible": true,
+  "visible": false,
   "order": 65,
   "tags": ["web", "music", "band", "typography", "loud"],
   "colors": ["#AAFF00", "#0E0E0E"]

@@ -1,0 +1,25 @@
+{
+  "title": "Matty Healy - THE1975",
+  "medium": "editorial",
+  "series": "culture feature",
+  "fonts": ["Hanken Grotesk", "HanziPen TC"],
+  "year": 2026,
+  "createdAt": "2026-08-15",
+  "images": [
+    {
+      "src": "../../assets/works/matty-healy-75/01.jpg",
+      "alt": "Electric blue feature page with a large white headline reading Satire, Cigarettes, The Art of the Unfiltered Frontman, beside a black-and-white photo of a musician in headphones pointing upward.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/matty-healy-75/02.jpg",
+      "alt": "White spread with a black-and-white photo of the singer at a mic, a handwritten blue pull-quote about honesty and mess, a bold blue THE 1975 wordmark, and columns of body copy.",
+      "weight": 1
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 35,
+  "tags": ["editorial", "music", "typography", "loud"],
+  "colors": ["#00178F", "#252424", "#FEFEFF"]
+}
