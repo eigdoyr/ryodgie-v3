@@ -1,0 +1,25 @@
+{
+  "title": "NIKE — AFTER HOURS",
+  "medium": "editorial",
+  "series": "night study",
+  "fonts": ["Kaisei Decol", "Joan"],
+  "year": 2026,
+  "createdAt": "2026-08-17",
+  "images": [
+    {
+      "src": "../../assets/works/nike-after-hours/01.jpg",
+      "alt": "Grainy black-and-white night photo of a woman seated on a ledge in a leather trench and Jordan sneakers, overlaid with serif type reading After Hours, Before Anything Else, above a red panel of body copy.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/nike-after-hours/02.jpg",
+      "alt": "Near-black close-up of an embroidered Nike swoosh on dark fabric with a rope chain, a small red block labelled Editorial / Nights in Motion, Issue 04, and columns of light serif body copy.",
+      "weight": 1
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 18,
+  "tags": ["editorial", "fashion", "sneakers", "typography", "tonal"],
+  "colors": ["#FF0105", "#0C0C0C", "#E4E3E5"]
+}
