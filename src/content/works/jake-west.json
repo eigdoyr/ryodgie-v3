@@ -1,0 +1,26 @@
+{
+  "title": "JAK3WEST",
+  "medium": "web",
+  "series": "athlete site",
+  "fonts": ["Audiowide", "JetBrains Mono"],
+  "year": 2026,
+  "createdAt": "2026-09-29",
+  "images": [
+    {
+      "src": "../../assets/works/jak3west/01.jpg",
+      "alt": "Dark athlete landing page with an extended yellow JAK3WEST wordmark over a grainy arena photo of a Northwestern guard smiling mid-court, framed by small yellow player stats.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/jak3west/02.jpg",
+      "alt": "Full-season schedule view on black, listing 34 games across six month columns with opponents, dates, and Big Ten labels in yellow and white.",
+      "weight": 1
+    }
+  ],
+  "liveUrl": "https://jak3west.vercel.app/",
+  "concept": false,
+  "visible": true,
+  "order": 1,
+  "tags": ["web", "sport", "typography", "loud"],
+  "colors": ["#FFC800", "#0C0C0C", "#F5F5F5"]
+}
