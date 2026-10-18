@@ -1,0 +1,25 @@
+{
+  "title": "NYC",
+  "medium": "editorial",
+  "series": "fashion spread",
+  "fonts": ["Manufacturing Consent", "Jacques Francois"],
+  "year": 2026,
+  "createdAt": "2026-10-20",
+  "images": [
+    {
+      "src": "../../assets/works/nyc/01.jpg",
+      "alt": "Magazine cover with a huge white blackletter NYC overlaying a street portrait of a platinum-blonde woman in black satin and dark wraparound sunglasses, with issue and collection labels.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/nyc/02.jpg",
+      "alt": "Editorial spread on a grey page with blackletter pull-quotes and serif body columns beside photos of a woman in a black satin top and knee-high heeled boots posed against brutalist concrete.",
+      "weight": 0.7
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 0,
+  "tags": ["editorial", "fashion", "menswear", "typography", "monochrome"],
+  "colors": ["#131313", "#D8D7CE", "#8A8A88"]
+}
