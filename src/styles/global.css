@@ -133,6 +133,13 @@ button:focus-visible {
   padding-top: 4rem;
 }
 
+.index-note {
+  font-size: var(--caption);
+  color: var(--muted);
+  margin-top: 0.5rem;
+  max-width: 44ch;
+}
+
 @media (max-width: 639px) {
   .site-header {
     padding-top: 2rem;
@@ -336,6 +343,34 @@ button:focus-visible {
   padding-top: 2rem;
 }
 
+/* about — services / interests */
+.about-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--gap-in);
+  max-width: 34rem;
+  padding-top: 3rem;
+}
+
+.about-col-label {
+  display: block;
+  font-size: var(--caption);
+  font-weight: 400;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.about-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-col li {
+  color: var(--fg);
+  line-height: var(--lh-prose);
+}
+
 /* ---- footer ---- */
 .site-footer {
   display: flex;
@@ -443,7 +478,6 @@ button:focus-visible {
 
 .ph-row {
   display: flex;
-  /* gap: 1.5rem; */
   padding: 0.5rem 0;
 }
 

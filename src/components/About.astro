@@ -1,5 +1,34 @@
 ---
 import { EMAIL } from '../lib/site';
+
+const columns = [
+  {
+    label: 'Services',
+    items: [
+      'Web design & redesigns',
+      'Brand & visual identity',
+      'Design direction',
+      'Launch & campaign pages',
+      'Lookbooks & digital editorials',
+      'Art direction',
+      'Design & UX reviews',
+      'Shopify & headless e-commerce',
+    ],
+  },
+  {
+    label: 'Interests',
+    items: [
+      'Editorial design',
+      'Typography',
+      'Grid systems',
+      'Minimalism',
+      'Brutalism',
+      'Print and Digital magazines',
+      'Photography',
+    ],
+  },
+];
+
 ---
 
 <section class="about" id="about">
@@ -7,22 +36,27 @@ import { EMAIL } from '../lib/site';
 
   <div class="about-body">
     <p>
-      I'm Ryodgie ( ree-yoh-jee ). It rhymes with nothing. 
+      Ryodgie Barnatia ( ree-yoh-jee ).
     </p>
     <p>
-      Front-end designer and developer. I chase editorial layouts, typefaces, and grids that actually hold, then go build the thing in Astro, React, or Vue. Sometimes I wander into the backend to see where the data's coming from, or poke at AI tools and lose an afternoon.
+      I design identities, editorials, and the websites and stores that carry them, then build them myself, so nothing is lost between the two.
     </p>
     <p>
-      I can't look at a menu, a poster or a badly kerned shopfront without rebuilding it in my head. This has been happening since long before anyone paid me for it. Most of the work on this page comes from exactly that — no client, no brief, no one telling me the logo should be bigger. Just things I wanted to see exist.
+      Before design, a decade with the <span class="highlight">Los Angeles Times</span> and <span class="highlight">Tribune Publishing</span>, where I learned how a publication holds attention: hierarchy, pacing, restraint. Then front-end development at <span class="highlight">MC2</span>, and visual design for AI training at <span class="highlight">Wirestock</span>.
     </p>
-    <p>
-      I got here sideways. I spent a decade in customer experience for major
-      publications like <span class="highlight">Tribune Publishing</span> and the <span class="highlight">Los Angeles Times</span>. Eventually, I made the
-      pivot—doing front-end at <span class="highlight">MC2</span>, then visual design for AI training models at <span class="highlight">Wirestock</span>.
-      Different rooms, same instinct — noticing when something's off and wanting to fix it.
-    </p>
+    <div class="about-cols">
+      {columns.map((column) => (
+        <div class="about-col">
+          <h2 class="about-col-label">{column.label}</h2>
+          <ul>
+            {column.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+
     <p class="about-cta">
-        I make things nobody asked for. Ask me for something — <a class="email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+      For new projects, or a second look at an existing one — <a class="email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
     </p>
   </div>
 </section>
