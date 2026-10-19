@@ -331,7 +331,7 @@ button:focus-visible {
 .about-body p {
   color: var(--muted);
   margin: 0 0 1rem;
-  max-width: 44ch;
+  max-width: 52ch;
   line-height: var(--lh-prose);
 }
 
