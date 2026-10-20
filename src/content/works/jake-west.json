@@ -20,7 +20,7 @@
   "liveUrl": "https://jak3west.vercel.app/",
   "concept": false,
   "visible": true,
-  "order": 1,
+  "order": 11,
   "tags": ["web", "sport", "typography", "loud"],
   "colors": ["#FFC800", "#0C0C0C", "#F5F5F5"]
 }

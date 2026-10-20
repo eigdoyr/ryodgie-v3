@@ -1,0 +1,32 @@
+{
+  "title": "PRADA PR 25YS",
+  "medium": "editorial",
+  "series": "fashion spread, web layout",
+  "fonts": ["Nata Sans"],
+  "year": 2026,
+  "createdAt": "2026-10-20",
+  "images": [
+    {
+      "src": "../../assets/works/prada/01.jpg",
+      "alt": "Cream editorial page with a side profile of a man in black wraparound Prada sunglasses and a black knit turtleneck, framed by small-caps product specs and body copy on the left.",
+      "weight": 1
+    },
+    {
+      "src": "../../assets/works/prada/02.jpg",
+      "alt": "Cream text spread with two columns of small-caps copy about the Prada wraparound frame above a giant black PRADA serif wordmark, tagged Issue 05, Menswear, Late Autumn.",
+      "weight": 0.4
+    }
+  ],
+  "concept": true,
+  "visible": true,
+  "order": 0,
+  "tags": [
+    "editorial",
+    "fashion",
+    "eyewear",
+    "typography",
+    "menswear",
+    "tonal"
+  ],
+  "colors": ["#F7F2E3", "#141414", "#9A9488"]
+}
